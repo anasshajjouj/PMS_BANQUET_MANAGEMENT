@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Product: Basic Coverage -->
+        <record id="product_basic_coverage" model="product.template">
+            <field name="name">Basic Coverage</field>
+            <field name="is_pack">True</field>
+        </record>
+
+        <!-- Sub-product for Basic Coverage -->
+        <record id="sub_product_basic_coverage" model="pack.products">
+            <field name="product_id" ref="product_basic_coverage"/>
+            <field name="product_tmpl_id" ref="product_basic_coverage"/>
+            <field name="price">500</field>
+            <field name="quantity">1</field>
+        </record>
+
+        <!-- Product: Standard Coverage -->
+        <record id="product_standard_coverage" model="product.template">
+            <field name="name">Standard Coverage</field>
+            <field name="is_pack">True</field>
+        </record>
+
+        <!-- Sub-product for Standard Coverage -->
+        <record id="sub_product_standard_coverage" model="pack.products">
+            <field name="product_id" ref="product_standard_coverage"/>
+            <field name="product_tmpl_id" ref="product_standard_coverage"/>
+            <field name="price">1000</field>
+            <field name="quantity">1</field>
+        </record>
+
+        <!-- Product: Premium Coverage -->
+        <record id="product_premium_coverage" model="product.template">
+            <field name="name">Premium Coverage</field>
+            <field name="is_pack">True</field>
+        </record>
+
+        <!-- Sub-product for Premium Coverage -->
+        <record id="sub_product_premium_coverage" model="pack.products">
+            <field name="product_id" ref="product_premium_coverage"/>
+            <field name="product_tmpl_id" ref="product_premium_coverage"/>
+            <field name="price">1500</field>
+            <field name="quantity">1</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,54 @@
+
+0models.sale_order.SaleOrder._onchange_company_id{
+qE:\DESKTOPD\Anass Hajjouj\Odoo environnement\Odoo-17\addons\custom_addons\product_combo_pack\models\sale_order.py4 4("2*|
+25 5(#e
+c
+5 5(#
+%4"__id*K
+
+__unknown_file (/*-
+models.sale_order.SaleOrder"
+
+order_line*
+3
+5*3
+3
+sale_order.py"
+9 9(
+implicit return*â
+56 6(0e
+c
+6 6(-
+%1"__id*K
+
+__unknown_file (/*-
+models.sale_order.SaleOrder"
+
+company_idD
+B
+6 6(0
+%2"__id**
+
+__unknown_file (*
+
+%1"
+idN
+L
+6 6(0
+
+line"
+
+company_id"__id*"
+
+__unknown_file (
+
+%2NL
+7 7('
+%3*$
+
+__unknown_file (
+
+line2_onchange_company_id*
+3
+5B
+models.sale_order.SaleOrderH

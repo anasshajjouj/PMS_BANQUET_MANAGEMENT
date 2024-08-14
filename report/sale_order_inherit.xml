@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_saleorder_inherit" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[@id='informations']" position="after">
+            <!-- Add the fields after the 'informations' div -->
+            <div class="row mt-4">
+                <div class="col-6">
+                    <strong>Event Start Date:</strong>
+                    <span>
+                        <t t-esc="doc.event_date_b and doc.event_date_b.strftime('%Y-%m-%d %H:%M:%S') or 'N/A'"/>
+                    </span>
+                </div>
+                <div class="col-6">
+                    <strong>Event End Date:</strong>
+                    <span>
+                        <t t-esc="doc.event_date_e and doc.event_date_e.strftime('%Y-%m-%d %H:%M:%S') or 'N/A'"/>
+                    </span>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//table[@class='table table-sm o_main_table table-borderless mt-4']" position="replace">
+            <table class="table table-sm o_main_table table-borderless mt-4">
+                <thead style="display: table-row-group">
+                    <tr>
+                        <th name="th_description" class="text-start">Description</th>
+                        <th name="th_quantity" class="text-end">Quantity</th>
+                        <th name="th_priceunit" class="text-end">Unit Price</th>
+                        <th name="th_discount" t-if="display_discount" class="text-end">
+                            <span>Disc.%</span>
+                        </th>
+                        <th name="th_taxes" class="text-end">Taxes</th>
+                        <th name="th_subtotal" class="text-end">
+                            <span>Amount</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="sale_tbody">
+                    <t t-set="lines_by_banquet_and_category" t-value="{}"/>
+                    <t t-foreach="doc.order_line" t-as="line">
+                        <t t-set="banquet_id" t-value="line.banquet_type_id.id or 0"/>
+                        <t t-set="category_id" t-value="line.job_category_id.id or 0"/>
+                        <t t-set="key" t-value="str(banquet_id) + '-' + str(category_id)"/>
+                        <t t-if="key not in lines_by_banquet_and_category">
+                            <t t-set="lines_by_banquet_and_category"
+                               t-value="dict(lines_by_banquet_and_category, **{key: []})"/>
+                        </t>
+                        <t t-set="updated_lines" t-value="lines_by_banquet_and_category[key] + [line]"/>
+                        <t t-set="lines_by_banquet_and_category"
+                           t-value="dict(lines_by_banquet_and_category, **{key: updated_lines})"/>
+                    </t>
+
+                    <t t-foreach="lines_by_banquet_and_category.items()" t-as="banquet_category_lines">
+                        <t t-set="key" t-value="banquet_category_lines[0]"/>
+                        <t t-set="lines" t-value="banquet_category_lines[1]"/>
+                        <t t-set="banquet_type" t-value="lines and lines[0].banquet_type_id or False"/>
+                        <t t-set="job_category" t-value="lines and lines[0].job_category_id or False"/>
+                        <t t-if="lines">
+                            <tr>
+                                <td colspan="6" style="background-color: #f0f0f0; font-weight: bold;">
+                                    <strong>
+                                        <t t-if="banquet_type">
+                                            <t t-esc="banquet_type.name"/>
+                                        </t>
+                                        -
+                                        <t t-if="job_category">
+                                            <t t-esc="job_category.name"/>
+                                        </t>
+                                    </strong>
+                                </td>
+                            </tr>
+                            <t t-foreach="lines" t-as="line">
+                                <tr>
+                                    <td class="text-start">
+                                        <t t-esc="line.name"/>
+                                    </td>
+                                    <td class="text-end">
+                                        <t t-esc="line.product_uom_qty"/>
+                                    </td>
+                                    <td class="text-end">
+                                        <t t-esc="'$ {:.2f}'.format(line.price_unit)"/>
+                                    </td>
+                                    <td class="text-end" t-if="display_discount">
+                                        <t t-esc="'{:.2f}'.format(line.discount)"/>
+                                    </td>
+                                    <td class="text-end">
+                                        <t t-esc="line.tax_id and ', '.join(tax.name for tax in line.tax_id) or ''"/>
+                                    </td>
+                                    <td class="text-end">
+                                        <t t-esc="'$ {:.2f}'.format(line.price_total)"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </t>
+                    </t>
+                </tbody>
+            </table>
+        </xpath>
+    </template>
+</odoo>

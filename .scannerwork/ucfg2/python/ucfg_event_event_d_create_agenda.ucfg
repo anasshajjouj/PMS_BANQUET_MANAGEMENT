@@ -1,0 +1,342 @@
+
+2models.event_event.EventAgendaWizard.create_agenda|
+rE:\DESKTOPD\Anass Hajjouj\Odoo environnement\Odoo-17\addons\custom_addons\product_combo_pack\models\event_event.pyg g("2*∫
+2h h(8m
+k
+h h( 
+%30"__id*R
+
+__unknown_file (6*4&
+$models.event_event.EventAgendaWizard"
+
+_contextom
+h h(8
+%31*#
+
+__unknown_file (
+
+%30*0
+
+__unknown_file (
+default_event_id2getC
+A
+h h(8
+
+event_id"__id*#
+
+__unknown_file (
+
+%31*
+4
+7*‚
+4x x(6
+x x(6
+%1"dict§
+°
+x x(5
+%2"__mapSet*"
+
+__unknown_file (
+
+%1*$
+
+__unknown_file (
+type*;
+
+__unknown_file (
+ir.actions.act_window_close"
+x x(6
+
+%1*Ë
+6l v(
+l v(
+%3"dictn
+l
+m" m(1
+%4"__id*T
+
+__unknown_file (8*6&
+$models.event_event.EventAgendaWizard"
+
+date_startë
+é
+m m(1
+%5"__mapSet*"
+
+__unknown_file (
+
+%3**
+
+__unknown_file (
+
+date_start*"
+
+__unknown_file (
+
+%4l
+j
+n  n(-
+%6"__id*R
+
+__unknown_file (6*4&
+$models.event_event.EventAgendaWizard"
+
+date_endè
+å
+n n(-
+%7"__mapSet*"
+
+__unknown_file (
+
+%3*(
+
+__unknown_file (
+
+date_end*"
+
+__unknown_file (
+
+%6n
+l
+o" o(1
+%8"__id*T
+
+__unknown_file (8*6&
+$models.event_event.EventAgendaWizard"
+
+time_startë
+é
+o o(1
+%9"__mapSet*"
+
+__unknown_file (
+
+%3**
+
+__unknown_file (
+
+time_start*"
+
+__unknown_file (
+
+%8m
+k
+p  p(-
+%10"__id*R
+
+__unknown_file (6*4&
+$models.event_event.EventAgendaWizard"
+
+time_endë
+é
+p p(-
+%11"__mapSet*"
+
+__unknown_file (
+
+%3*(
+
+__unknown_file (
+
+time_end*#
+
+__unknown_file (
+
+%10v
+t
+q& q(<
+%12"__id*[
+
+__unknown_file (?*=&
+$models.event_event.EventAgendaWizard"
+number_of_visitoró
+î
+q q(<
+%13"__mapSet*"
+
+__unknown_file (
+
+%3*.
+
+__unknown_file (
+number_visitor*#
+
+__unknown_file (
+
+%12r
+p
+r% r(7
+%14"__id*W
+
+__unknown_file (;*9&
+$models.event_event.EventAgendaWizard"
+event_type_idF
+D
+r% r(:
+%15"__id*+
+
+__unknown_file (*
+
+%14"
+idñ
+ì
+r r(:
+%16"__mapSet*"
+
+__unknown_file (
+
+%3*-
+
+__unknown_file (
+event_type_id*#
+
+__unknown_file (
+
+%15H
+F
+s  s((
+%17"__id*-
+
+__unknown_file (*
+
+event"
+idë
+é
+s s((
+%18"__mapSet*"
+
+__unknown_file (
+
+%3*(
+
+__unknown_file (
+
+event_id*#
+
+__unknown_file (
+
+%17T
+R
+t' t(;
+%19"__id*9
+
+__unknown_file (*
+
+line"
+program_detailsò
+ï
+t t(;
+%20"__mapSet*"
+
+__unknown_file (
+
+%3*/
+
+__unknown_file (
+program_details*#
+
+__unknown_file (
+
+%19H
+F
+u u(#
+%21"__id*-
+
+__unknown_file (*
+
+line"
+dayå
+â
+u u(#
+%22"__mapSet*"
+
+__unknown_file (
+
+%3*#
+
+__unknown_file (
+day*#
+
+__unknown_file (
+
+%21E
+C
+l v(
+agenda_vals"__id*"
+
+__unknown_file (
+
+%3h
+f
+w w(
+%23"__id*M
+
+__unknown_file (1*/&
+$models.event_event.EventAgendaWizard"
+env}{
+w w((
+%24"__mapGet*#
+
+__unknown_file (
+
+%23*,
+
+__unknown_file (
+event.agenda2__getitem__mk
+w w(<
+%25*#
+
+__unknown_file (
+
+%24*+
+
+__unknown_file (
+
+agenda_vals2create*
+4
+6*°
+7j j(<h
+f
+j j(
+%26"__id*M
+
+__unknown_file (1*/&
+$models.event_event.EventAgendaWizard"
+env|z
+j j(+
+%27"__mapGet*#
+
+__unknown_file (
+
+%26*+
+
+__unknown_file (
+event.event2__getitem__jh
+j j(<
+%28*#
+
+__unknown_file (
+
+%27*(
+
+__unknown_file (
+
+
+event_id2browse@
+>
+j j(<
+event"__id*#
+
+__unknown_file (
+
+%28t
+r
+k k(,
+%29"__id*Y
+
+__unknown_file (=*;&
+$models.event_event.EventAgendaWizard"
+agenda_line_ids*
+4
+6B(&
+$models.event_event.EventAgendaWizardH

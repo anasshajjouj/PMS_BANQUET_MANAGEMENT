@@ -1,0 +1,219 @@
+
+4models.event_event.EventEvent.open_calendar_planning|
+rE:\DESKTOPD\Anass Hajjouj\Odoo environnement\Odoo-17\addons\custom_addons\product_combo_pack\models\event_event.py* *("2*∑
+2+ +(3i
+g
++ +(0
+%1"__id*O
+
+__unknown_file (3*1
+models.event_event.EventEvent"
+organizer_idD
+B
++ +(3
+%2"__id**
+
+__unknown_file (*
+
+%1"
+idN
+L
++ +(3
+organizer_partner_id"__id*"
+
+__unknown_file (
+
+%2i
+g
+, ,(+
+%3"__id*O
+
+__unknown_file (3*1
+models.event_event.EventEvent"
+banquet_typeD
+B
+, ,(.
+%4"__id**
+
+__unknown_file (*
+
+%3"
+idI
+G
+, ,(.
+banquet_type_id"__id*"
+
+__unknown_file (
+
+%4_
+]
+- -(
+%5"__id*E
+
+__unknown_file ()*'
+models.event_event.EventEvent"
+idB
+@
+- -(
+
+event_id"__id*"
+
+__unknown_file (
+
+%5
+. 9(	
+%6"dictû
+õ
+/ /(+
+%7"__mapSet*"
+
+__unknown_file (
+
+%6*$
+
+__unknown_file (
+type*5
+
+__unknown_file (
+ir.actions.act_windowú
+ô
+0 0()
+%8"__mapSet*"
+
+__unknown_file (
+
+%6*)
+
+__unknown_file (
+	res_model*.
+
+__unknown_file (
+calendar.eventí
+è
+1 1(
+%9"__mapSet*"
+
+__unknown_file (
+
+%6*)
+
+__unknown_file (
+	view_mode*$
+
+__unknown_file (
+forma
+_
+2 2(
+%10"__id*F
+
+__unknown_file (**(
+models.event_event.EventEvent"
+envÄ~
+2 2(H
+%11*#
+
+__unknown_file (
+
+%10*A
+
+__unknown_file (%#
+!calendar.view_calendar_event_form2refF
+D
+2 2(K
+%12"__id*+
+
+__unknown_file (*
+
+%11"
+idê
+ç
+2 2(K
+%13"__mapSet*"
+
+__unknown_file (
+
+%6*'
+
+__unknown_file (	
+view_id*#
+
+__unknown_file (
+
+%12è
+å
+3 3(
+%14"__mapSet*"
+
+__unknown_file (
+
+%6*&
+
+__unknown_file (
+
+target*#
+
+__unknown_file (
+new
+4 8(
+%15"dictØ
+¨
+5 5(<
+%16"__mapSet*#
+
+__unknown_file (
+
+%15*4
+
+__unknown_file (
+default_organizer_id*4
+
+__unknown_file (
+
+organizer_partner_idü
+ú
+6 6(,
+%17"__mapSet*#
+
+__unknown_file (
+
+%15*0
+
+__unknown_file (
+default_event_id*(
+
+__unknown_file (
+
+
+event_id≠
+™
+7 7(:
+%18"__mapSet*#
+
+__unknown_file (
+
+%15*7
+
+__unknown_file (
+default_banquet_type_id*/
+
+__unknown_file (
+
+banquet_type_idê
+ç
+4 8(
+%19"__mapSet*"
+
+__unknown_file (
+
+%6*'
+
+__unknown_file (	
+context*#
+
+__unknown_file (
+
+%15"
+. 9(	
+
+%6B!
+models.event_event.EventEventH

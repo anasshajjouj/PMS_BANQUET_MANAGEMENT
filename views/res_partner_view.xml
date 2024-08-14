@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit the existing res.partner form view -->
+        <record id="view_partner_form_inherit_job_category" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit.job.category</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <!-- Replace the Job Position field with Job Category field -->
+                <field name="function" position="replace">
+                    <field name="job_category_id" widget="many2many_tags"/>
+                </field>
+                <field name="job_category_id" position="after">
+                    <field name="banquet_type_ids" widget="many2many_tags"/>
+                    <field name="product_pack_ids" widget="many2many_tags"/>
+                </field>
+                <!--                <xpath expr="//notebook" position="inside">-->
+                <!--                    <page string="Product Packs" name="product_packs">-->
+                <!--                        <field name="product_pack_ids">-->
+                <!--                            <tree editable="bottom">-->
+                <!--                                <field name="name"/>-->
+                <!--                                &lt;!&ndash;                                <field name="list_price"/>&ndash;&gt;-->
+                <!--                                <field name="pack_price"/>-->
+                <!--                                <field name="job_category_id"/>-->
+                <!--                            </tree>-->
+                <!--                        </field>-->
+                <!--                    </page>-->
+                <!--                </xpath>-->
+            </field>
+        </record>
+    </data>
+</odoo>

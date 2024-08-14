@@ -1,0 +1,53 @@
+:
+%models.event_activities.EventActivityodoo.models.Model;
+&models.event_type_activities.EventTypeodoo.models.Model0
+models.personnel.ResPartnerodoo.models.Model@
+"models.event_event.EventAgendaLineodoo.models.TransientModel’
+models.event_event.EventEventN
+_onchange_organizer_id4models.event_event.EventEvent._onchange_organizer_idN
+open_calendar_planning4models.event_event.EventEvent.open_calendar_planning>
+open_form_view,models.event_event.EventEvent.open_form_viewodoo.models.Modelô
+$models.event_event.EventAgendaWizardW
+_compute_number_of_days<models.event_event.EventAgendaWizard._compute_number_of_daysQ
+_create_agenda_lines9models.event_event.EventAgendaWizard._create_agenda_linesC
+create_agenda2models.event_event.EventAgendaWizard.create_agenda?
+default_get0models.event_event.EventAgendaWizard.default_getodoo.models.TransientModelÌ
+"models.sale_order.WebsiteSaleOrderI
+get_product_price4models.sale_order.WebsiteSaleOrder.get_product_priceE
+quote_configure2models.sale_order.WebsiteSaleOrder.quote_configureodoo.http.Controllerª
+models.sale_order.SaleOrderLineV
+_compute_product_template9models.sale_order.SaleOrderLine._compute_product_templateL
+_onchange_product_id4models.sale_order.SaleOrderLine._onchange_product_idN
+_prepare_invoice_line5models.sale_order.SaleOrderLine._prepare_invoice_lineodoo.models.Model‚
+models.sale_order.SaleOrderH
+_onchange_company_id0models.sale_order.SaleOrder._onchange_company_id<
+action_confirm*models.sale_order.SaleOrder.action_confirmH
+open_agenda_planning0models.sale_order.SaleOrder.open_agenda_planningodoo.models.Model:
+%models.banquet_details.BanquetDetailsodoo.models.Model4
+models.job_category.JobCategoryodoo.models.Model´
+models.event_group.EventGroupP
+action_create_quotation5models.event_group.EventGroup.action_create_quotation.
+create$models.event_group.EventGroup.createodoo.models.Model4
+models.event_agenda.EventAgendaodoo.models.Model2
+models.event_agenda.EventTypeodoo.models.Model>
+)models.banquet_type.ProductPublicCategoryodoo.models.Model¸
+models.banquet_type.BanquetTypeP
+_compute_partner_count6models.banquet_type.BanquetType._compute_partner_count0
+create&models.banquet_type.BanquetType.createodoo.models.Model>
+)models.calendar_planning.CalendarPlanningodoo.models.Model°
+'models.product_template.ProductTemplateV
+_check_invoice_policy=models.product_template.ProductTemplate._check_invoice_policyN
+_onchange_is_pack9models.product_template.ProductTemplate._onchange_is_pack^
+_onchange_job_category_idAmodels.product_template.ProductTemplate._onchange_job_category_idn
+!change_quantity_based_on_locationImodels.product_template.ProductTemplate.change_quantity_based_on_location8
+create.models.product_template.ProductTemplate.createV
+default_pack_location=models.product_template.ProductTemplate.default_pack_locationD
+get_quantity4models.product_template.ProductTemplate.get_quantityH
+set_pack_price6models.product_template.ProductTemplate.set_pack_priceT
+update_price_product<models.product_template.ProductTemplate.update_price_productJ
+update_quantity7models.product_template.ProductTemplate.update_quantity6
+write-models.product_template.ProductTemplate.writeodoo.models.Model¨
+$models.product_template.PackProductsO
+_check_positive_qty8models.product_template.PackProducts._check_positive_qty_
+compute_quantity_of_product@models.product_template.PackProducts.compute_quantity_of_product;
+	set_price.models.product_template.PackProducts.set_priceodoo.models.Model

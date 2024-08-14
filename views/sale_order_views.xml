@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_order_form" model="ir.ui.view">
+        <field name="name">sale.order.view.form.inherit.job.category</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="event_id" options="{'no_create': True}" placeholder="Select an Event" readonly="1"/>
+                <field name="banquet_type_id"/>
+                <field name="event_date_b"/>
+                <field name="event_date_e"/>
+<!--                <field name="event_date_begin"/>-->
+<!--                <field name="event_date_end"/>-->
+            </xpath>
+            <xpath expr="//field[@name='order_line']//tree//field[@name='event_id']" position="attributes">
+                <attribute name="domain">[('organizer_id', '=', parent.partner_id)]</attribute>
+            </xpath>
+            <!-- Insert category_id and partner_id before product_id in the tree view of order_line -->
+            <xpath expr="//field[@name='order_line']//tree//field[@name='product_id']" position="before">
+                <field name="banquet_type_id"/>
+                <field name="job_category_id"/>
+                <field name="personnel_ids" column_invisible="1"/>
+                <field name="pack_ids" column_invisible="1"/>
+                <field name="partner_id" domain="[('id', 'in', personnel_ids)]"/>
+
+            </xpath>
+            <xpath expr="//field[@name='order_line']//tree//field[@name='product_template_id']" position="attributes">
+
+                <attribute name="domain">[('id', 'in', pack_ids)]</attribute>
+
+            </xpath>
+        </field>
+    </record>
+
+    <record id="inherit_sale_order_view_form" model="ir.ui.view">
+        <field name="name">inherit.sale.order.form.agenda.planning</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[@id='send_by_email']" position="after">
+                <button name="open_agenda_planning" type="object" string="Agenda Planning" class="btn-primary"/>
+            </xpath>
+            <xpath expr="//header/button[@id='send_by_email']" position="after">
+                <button name="open_agenda_planning" type="object" string="Accommodation" class="btn-primary">
+                    <img src="/product_combo_pack/static/description/accomondation.png"
+                         style="height: 20px; width: 20px;"/>
+                    Accommodation
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sale_order_view_search_inherit_quotation" model="ir.ui.view">
+        <field name="name">sale.order.view.search.inherit.quotation</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='sales']" position="after">
+                <filter string="Quotation Sent" name="quotation_sent" domain="[('state', '=', 'sent')]"/>
+                <filter string="Cancelled" name="cancelled" domain="[('state', '=', 'cancel')]"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_event_form_inherit" model="ir.ui.view">
+        <field name="name">event.view_event_form.inherit.create_invoice</field>
+        <field name="model">event.event</field>
+        <field name="inherit_id" ref="event.view_event_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='185']" position="after">
+                <button name="open_form_view" type="object" string="Create Quotation" class="btn-primary"/>
+                <!--                <button name="open_agenda_planning" type="object" string="Agenda Planning" class="btn-primary"/>-->
+                <button name="open_calendar_planning" type="object" string="Calendar Planning" class="btn-primary"/>
+                <!--                <button type="action" string="Print Activities"-->
+                <!--                        class="btn-primary"/>-->
+            </xpath>
+            <xpath expr="//field[@name='badge_image']" position="after">
+                <field name="group_ids"/>
+            </xpath>
+            <xpath expr="//field[@name='date_begin']" position="after">
+                <field name="banquet_type"/>
+            </xpath>
+
+            <!-- Adding Notebook Pages -->
+            <xpath expr="//notebook" position="inside">
+                <page string="Programs">
+                    <field name="event_activity_ids" class="w-100">
+                        <tree string="Program" editable="bottom">
+                            <field name="time_start"/>
+                            <field name="time_end"/>
+                            <field name="description_event"/>
+<!--                            <field name="salle_event"/>-->
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- Inherit event search view -->
+    <record id="view_event_search_inherit_organizer" model="ir.ui.view">
+        <field name="name">event.view_event_search.inherit.organizer</field>
+        <field name="model">event.event</field>
+        <field name="inherit_id" ref="event.view_event_search"/>
+        <field name="arch" type="xml">
+<!--            <xpath expr="//filter[@name='myevents']" position="after">-->
+<!--                <filter string="Organizer" name="organizer_filter" domain="[('organizer_id', '=', uid)]"/>-->
+<!--            </xpath>-->
+            <xpath expr="//group" position="inside">
+                <filter string="Organizer" name="organizer_id" context="{'group_by': 'organizer_id'}"/>
+                <field name="organizer_id" string="Organizer"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!--    <record id="view_event_agenda_wizard_form" model="ir.ui.view">-->
+    <!--        <field name="name">event.agenda.wizard.form</field>-->
+    <!--        <field name="model">event.agenda.wizard</field>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <form string="Event Agenda">-->
+    <!--                <sheet>-->
+    <!--                    <notebook>-->
+    <!--                        <page string="Agenda Planning">-->
+    <!--                            <group>-->
+    <!--                                <group>-->
+    <!--                                    <field name="organizer_id" readonly="1"/>-->
+    <!--                                    <field name="event_type_id"/>-->
+    <!--                                </group>-->
+    <!--                                <group>-->
+    <!--                                    <field name="date_start" string="Start Date"/>-->
+    <!--                                    <field name="time_start" string="Start Time"/>-->
+    <!--                                </group>-->
+    <!--                                <group>-->
+    <!--                                    <field name="date_end" string="End Date"/>-->
+    <!--                                    <field name="time_end" string="End Time"/>-->
+    <!--                                    <field name="number_of_visitor"/>-->
+    <!--                                </group>-->
+    <!--                            </group>-->
+    <!--                        </page>-->
+    <!--                        <page string="Agenda Programs">-->
+    <!--                            <group>-->
+    <!--                                <field name="agenda_line_ids">-->
+    <!--                                    <tree editable="bottom">-->
+    <!--                                        <field name="day"/>-->
+    <!--                                        <field name="time"/>-->
+    <!--                                        <field name="Activities"/>-->
+    <!--                                        <field name="Product_list"/>-->
+    <!--                                    </tree>-->
+    <!--                                </field>-->
+    <!--                            </group>-->
+    <!--                        </page>-->
+    <!--                    </notebook>-->
+    <!--                </sheet>-->
+    <!--                <footer>-->
+    <!--                    <button name="create_agenda" string="Create Agenda" type="object" class="btn-primary"/>-->
+    <!--                    <button string="Cancel" class="btn-secondary" special="cancel"/>-->
+    <!--                </footer>-->
+    <!--            </form>-->
+    <!--        </field>-->
+    <!--    </record>-->
+</odoo>

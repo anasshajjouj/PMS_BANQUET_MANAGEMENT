@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="feedback_thank_you_template" name="Feedback Thank You">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>Thank You for Your Feedback!</h1>
+                <p>Your feedback has been submitted successfully.</p>
+            </div>
+        </t>
+    </template>
+</odoo>

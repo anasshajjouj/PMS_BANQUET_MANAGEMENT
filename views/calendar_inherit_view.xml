@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_calendar_event_form_inherit" model="ir.ui.view">
+        <field name="name">calendar.event.form.inherit</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+        <field name="arch" type="xml">
+            <field name="start" position="after">
+                <field name="event_id" options="{'no_create': True}" readonly="1"/>
+                <field name="banquet_type_id"/>
+                <field name="organizer_id"/>
+<!--                <field name="seats_limited" readonly="1"/>-->
+            </field>
+        </field>
+    </record>
+</odoo>

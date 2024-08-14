@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Define the Conference Event Type -->
+        <record id="conference_event_type" model="event.type">
+            <field name="name">Conference</field>
+        </record>
+        <!-- Example Activities for a Conference -->
+        <record id="activity_1" model="event.activity">
+            <field name="time_start">9.0</field>
+            <field name="time_end">10.0</field>
+            <field name="description_event">Opening Speech</field>
+            <field name="salle_event">salle_a</field>
+            <field name="event_type_id" ref="conference_event_type"/>
+        </record>
+        <record id="activity_2" model="event.activity">
+            <field name="time_start">10.0</field>
+            <field name="time_end">11.0</field>
+            <field name="description_event">Keynote Session</field>
+            <field name="salle_event">salle_b</field>
+            <field name="event_type_id" ref="conference_event_type"/>
+        </record>
+        <record id="activity_3" model="event.activity">
+            <field name="time_start">11.0</field>
+            <field name="time_end">12.0</field>
+            <field name="description_event">Panel Discussion</field>
+            <field name="salle_event">salle_c</field>
+            <field name="event_type_id" ref="conference_event_type"/>
+        </record>
+
+
+
+    </data>
+</odoo>

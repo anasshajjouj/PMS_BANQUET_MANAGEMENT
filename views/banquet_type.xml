@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Tree view for banquet type -->
+    <record id="view_banquet_type_tree" model="ir.ui.view">
+        <field name="name">banquet.type.tree</field>
+        <field name="model">banquet.type</field>
+        <field name="arch" type="xml">
+            <tree string="Banquet Type">
+                <field name="name"/>
+                <field name="partner_count" string="Number of Partners"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form view for banquet type -->
+    <record id="view_banquet_type_form" model="ir.ui.view">
+        <field name="name">banquet.type.form</field>
+        <field name="model">banquet.type</field>
+        <field name="arch" type="xml">
+            <form string="Banquet Type">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <notebook>
+                        <page string="Job Categories">
+                            <field name="job_category_ids">
+                                <tree string="Job Categories">
+                                    <field name="name"/>
+                                    <field name="personnel_ids" readonly="1"/>
+                                </tree>
+                                <form string="Job Category">
+                                    <group>
+                                        <field name="name"/>
+                                        <field name="personnel_ids" widget="many2many_tags"/>
+<!--                                        <field name="personnel_count" readonly="1"/>-->
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action for Banquet Types -->
+    <record id="action_banquet_type" model="ir.actions.act_window">
+        <field name="name">Banquet Types</field>
+        <field name="res_model">banquet.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_banquet_type_tree"/>
+    </record>
+
+    <!-- Menu item for banquet.type -->
+    <menuitem id="menu_banquet_type"
+              name="Banquet Types"
+              parent="event.menu_event_configuration"
+              action="action_banquet_type"
+              sequence="1"/>
+</odoo>

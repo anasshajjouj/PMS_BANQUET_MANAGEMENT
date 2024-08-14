@@ -1,0 +1,4 @@
+models.product_template.ProductTemplate.write
+super.__init__
+==
+write

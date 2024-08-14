@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Tree view for Group Event -->
+    <record id="view_group_event_tree" model="ir.ui.view">
+        <field name="name">event.group.tree</field>
+        <field name="model">event.group</field>
+        <field name="arch" type="xml">
+            <tree string="Group Events">
+                <field name="name"/>
+                <field name="event_ids"/>
+                <button name="action_create_quotation" type="object" class="btn-primary" string="Create Quotation"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form view for Group Event -->
+    <record id="view_group_event_form" model="ir.ui.view">
+        <field name="name">event.group.form</field>
+        <field name="model">event.group</field>
+        <field name="arch" type="xml">
+            <form string="Group Event">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="event_ids"/>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action for Group Event -->
+    <record id="action_group_event" model="ir.actions.act_window">
+        <field name="name">Group Event</field>
+        <field name="res_model">event.group</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu item for Group Event -->
+    <menuitem id="menu_group_event"
+              name="Group Event"
+              parent="event.event_main_menu"
+              action="action_group_event"
+              sequence="2"/>
+</odoo>

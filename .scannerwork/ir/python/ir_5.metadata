@@ -1,0 +1,6 @@
+models.sale_order.SaleOrder.action_confirm
+super.__init__
+==
+action_confirm
+create
+_action_confirm

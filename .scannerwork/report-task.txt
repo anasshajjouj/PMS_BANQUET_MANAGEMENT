@@ -1,0 +1,7 @@
+organization=odoo-project
+projectKey=odoo-project_anass-hajjouj-odoo-project
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.56210
+dashboardUrl=https://sonarcloud.io/dashboard?id=odoo-project_anass-hajjouj-odoo-project
+ceTaskId=AZEa2zmohKjAevsVV9pi
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZEa2zmohKjAevsVV9pi

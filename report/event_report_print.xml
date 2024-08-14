@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="report_event_program">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div style="width: 100%; text-align: center; margin-bottom: 20px;">
+                            <h3>Event Program:
+                                <t t-esc="doc.name"/>
+                            </h3>
+                        </div>
+                        <div style="display: flex;">
+                            <p>
+                                <strong>Date:</strong>
+                                <t t-esc="doc.date_begin.strftime('%B %d, %Y')"/>
+                            </p>
+                            <p>
+                                <strong>Organizer:</strong>
+                                <t t-esc="doc.organizer_id.name"/>
+                            </p>
+                            <p>
+                                <strong>Venue:</strong>
+                                <t t-esc="doc.address_id.name"/>
+                            </p>
+                        </div>
+                        <table class="table table-bordered" style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background-color: #01729d; color: white;">
+                                    <th style="width: 40%; text-align: left; padding: 10px;">Time</th>
+                                    <th style="width: 60%; text-align: left; padding: 10px;">Description</th>
+                                    <!--                                <th style="width: 40%; text-align: left; padding: 10px;">Salle</th>-->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.event_activity_ids" t-as="activity">
+                                    <tr>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">
+                                            <t t-esc="'{:.2f}'.format(activity.time_start)"/>
+                                            -
+                                            <t t-esc="'{:.2f}'.format(activity.time_end)"/>
+                                        </td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">
+                                            <t t-esc="activity.description_event"/>
+                                        </td>
+                                        <!--                                    <td style="padding: 10px; border: 1px solid #ddd;">-->
+                                        <!--                                        <t t-esc="activity.salle_event"/>-->
+                                        <!--                                    </td>-->
+
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+
+        </t>
+        <!-- Add QR Code -->
+        <div style="text-align: center; margin-top: 20px;">
+            <p>
+                <strong>Scan the QR code to provide feedback:</strong>
+            </p>
+            <img t-att-src="'/report/barcode/?type=QR&amp;value=' + doc.feedback_url + '&amp;width=200&amp;height=200'"
+                 alt="QR Code"/>
+        </div>
+    </template>
+</odoo>

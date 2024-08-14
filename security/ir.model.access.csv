@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pack_products_user,access.pack.products.user,model_pack_products,base.group_user,1,1,1,1
+access_job_category_user,model_job_category,model_job_category,base.group_user,1,1,1,1
+access_banquet_type_user,model_banquet_type,model_banquet_type,base.group_user,1,1,1,1
+access_event_manager,event.event.manager,model_event_event,base.group_user,1,1,1,1
+access_calendar_planning_user,access.calendar.planning.user,model_calendar_event,,1,1,1,1
+access_event_agenda_wizard_user,model_event_agenda_wizard,model_event_agenda_wizard,base.group_user,1,1,1,1
+access_event_activity,access.event.activity,model_event_activity,base.group_user,1,1,1,1
+access_event_type,access.event.type,model_event_type,base.group_user,1,1,1,1
+access_event_group_user,event.group_user,model_event_group,base.group_user,1,1,1,1
+invoice_folder_access_manager,invoice.folder access manager,model_invoice_folder,base.group_system,1,1,1,1
+access_feedback_user,access_feedback_user,model_event_feedback,base.group_user,1,1,1,1
+
+
+
+
+

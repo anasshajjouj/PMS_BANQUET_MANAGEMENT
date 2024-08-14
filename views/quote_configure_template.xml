@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="quote_configure_template" name="Quote Configure">
+            <t t-call="website.layout">
+                <div class="container">
+                    <h1>Configure Your Quote</h1>
+                    <form id="quoteForm">
+                        <div class="form-group">
+                            <label for="customer_name">Your Name</label>
+                            <input type="text" name="customer_name" id="customer_name" class="form-control" required="required"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="partner_id">Select Partner</label>
+                            <select name="partner_id" class="form-control" id="partner_id" required="required">
+                                <option value="">Select</option>
+                                <t t-foreach="partners" t-as="partner">
+                                    <option t-att-value="partner.id"><t t-esc="partner.name"/></option>
+                                </t>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="job_category_id">Select Job Category</label>
+                            <select name="job_category_id" class="form-control" id="job_category_id" required="required">
+                                <option value="">Select</option>
+                                <t t-foreach="job_categories" t-as="category">
+                                    <option t-att-value="category.id"><t t-esc="category.name"/></option>
+                                </t>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="product_id">Select Product</label>
+                            <select name="product_id" class="form-control" id="product_id" required="required">
+                                <option value="">Select</option>
+                                <t t-foreach="products" t-as="product">
+                                    <option t-att-value="product.id"><t t-esc="product.name"/></option>
+                                </t>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="price_unit">Price</label>
+                            <input type="text" name="price_unit" id="price_unit" class="form-control" readonly="1"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" name="quantity" id="quantity" class="form-control" value="1" min="1" required="required"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="total">Total</label>
+                            <input type="text" name="total" id="total" class="form-control" readonly="1"/>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    <script type="text/javascript" src="/product_combo_pack/static/src/js/script.js"></script>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

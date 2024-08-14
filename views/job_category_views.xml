@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Tree view for Job Categories -->
+    <record id="view_job_category_tree" model="ir.ui.view">
+        <field name="name">job.category.tree</field>
+        <field name="model">job.category</field>
+        <field name="arch" type="xml">
+            <tree string="Job Categories">
+                <field name="name"/>
+                <field name="banquet_id" string="Banquet Type"/>
+                <field name="personnel_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form view for Job Categories -->
+    <record id="view_job_category_form" model="ir.ui.view">
+        <field name="name">job.category.form</field>
+        <field name="model">job.category</field>
+        <field name="arch" type="xml">
+            <form string="Job Category">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="banquet_id" string="Banquet Type"/>
+                    </group>
+                    <group>
+                        <field name="personnel_ids">
+                            <tree string="Providers">
+                                <field name="name"/>
+                                <field name="phone"/>
+                                <field name="email"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action for Job Categories -->
+    <record id="action_job_category" model="ir.actions.act_window">
+        <field name="name">Job Category</field>
+        <field name="res_model">job.category</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_job_category_tree"/>
+    </record>
+
+    <!-- Menu item for Job Categories -->
+    <menuitem id="menu_job_category"
+              name="Event Category"
+              parent="sale.menu_sale_config"
+              action="action_job_category"
+              sequence="11"/>
+</odoo>

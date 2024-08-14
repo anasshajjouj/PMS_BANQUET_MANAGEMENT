@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="event_print_report" model="ir.actions.report">
+        <field name="name">Print Program</field>
+        <field name="model">event.event</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">product_combo_pack.report_event_program</field>
+        <field name="report_file">product_combo_pack.report_event_program</field>
+        <field name="binding_model_id" ref="model_event_event"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

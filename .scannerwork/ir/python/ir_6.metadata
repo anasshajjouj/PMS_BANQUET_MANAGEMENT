@@ -1,0 +1,8 @@
+models.sale_order.SaleOrderLine._prepare_invoice_line
+str.__init__
+==
+ensure_one
+set
+get
+link
+update

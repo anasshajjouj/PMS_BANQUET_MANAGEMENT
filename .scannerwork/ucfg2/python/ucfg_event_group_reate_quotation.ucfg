@@ -1,0 +1,115 @@
+
+5models.event_group.EventGroup.action_create_quotation|
+rE:\DESKTOPD\Anass Hajjouj\Odoo environnement\Odoo-17\addons\custom_addons\product_combo_pack\models\event_group.py   ("2*„	
+2" )(	
+" )(	
+%1"dictû
+õ
+# #(+
+%2"__mapSet*"
+
+__unknown_file (
+
+%1*$
+
+__unknown_file (
+type*5
+
+__unknown_file (
+ir.actions.act_windowí
+è
+$ $(
+%3"__mapSet*"
+
+__unknown_file (
+
+%1*$
+
+__unknown_file (
+name*)
+
+__unknown_file (
+	Quotationò
+ï
+% %(%
+%4"__mapSet*"
+
+__unknown_file (
+
+%1*)
+
+__unknown_file (
+	res_model**
+
+__unknown_file (
+
+sale.orderí
+è
+& &(
+%5"__mapSet*"
+
+__unknown_file (
+
+%1*)
+
+__unknown_file (
+	view_mode*$
+
+__unknown_file (
+form`
+^
+' '(
+%6"__id*F
+
+__unknown_file (**(
+models.event_group.EventGroup"
+envqo
+' '(;
+%7*"
+
+__unknown_file (
+
+%6*4
+
+__unknown_file (
+sale.view_order_form2refD
+B
+' '(>
+%8"__id**
+
+__unknown_file (*
+
+%7"
+idé
+ã
+' '(>
+%9"__mapSet*"
+
+__unknown_file (
+
+%1*'
+
+__unknown_file (	
+view_id*"
+
+__unknown_file (
+
+%8ì
+ê
+( ((
+%10"__mapSet*"
+
+__unknown_file (
+
+%1*&
+
+__unknown_file (
+
+target*'
+
+__unknown_file (	
+current"
+" )(	
+
+%1B!
+models.event_group.EventGroupH

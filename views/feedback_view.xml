@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Action to open the tree view of Feedback -->
+    <record id="action_feedback" model="ir.actions.act_window">
+        <field name="name">Feedback</field>
+        <field name="res_model">event.feedback</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Tree view for listing all feedback -->
+    <record id="view_feedback_tree" model="ir.ui.view">
+        <field name="name">event.feedback.tree</field>
+        <field name="model">event.feedback</field>
+        <field name="arch" type="xml">
+            <tree string="Feedback">
+                <field name="name"/>
+                <field name="rating"/>
+                <field name="comments"/>
+                <field name="event_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form view for creating and editing feedback -->
+    <record id="view_feedback_form" model="ir.ui.view">
+        <field name="name">event.feedback.form</field>
+        <field name="model">event.feedback</field>
+        <field name="arch" type="xml">
+            <form string="Feedback">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="rating"/>
+                        <field name="comments"/>
+                        <field name="event_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+      <!-- Menu item to access the Feedback -->
+    <menuitem id="menu_feedback"
+              name="Feedback"
+              parent="event.menu_event_configuration"
+              sequence="2"
+              action="action_feedback"/>
+
+</odoo>

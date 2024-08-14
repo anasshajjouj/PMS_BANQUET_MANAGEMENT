@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Define banquet types -->
+    <record id="banquet_type_wedding" model="banquet.type">
+        <field name="name">Wedding</field>
+        <!-- Add job categories for Wedding banquet -->
+        <field name="job_category_ids" eval="[(0, 0, {'name': 'Catering'}), (0, 0, {'name': 'Decoration'}), (0, 0, {'name': 'Accomodation'})]"/>
+    </record>
+
+    <record id="banquet_type_conference" model="banquet.type">
+        <field name="name">Conference</field>
+        <!-- Add job categories for Conference banquet -->
+        <field name="job_category_ids" eval="[(0, 0, {'name': 'Catering'}), (0, 0, {'name': 'Decoration'}), (0, 0, {'name': 'Accomodation'}), (0, 0, {'name': 'Photographer'})]"/>
+    </record>
+
+    <record id="banquet_type_birthday" model="banquet.type">
+        <field name="name">Birthday</field>
+        <field name="job_category_ids" eval="[(0, 0, {'name': 'Entertainment'}), (0, 0, {'name': 'Cake'}), (0, 0, {'name': 'Accomodation'})]"/>
+    </record>
+
+    <!-- Add more banquet types as needed -->
+</odoo>

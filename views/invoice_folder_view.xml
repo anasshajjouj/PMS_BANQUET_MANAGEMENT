@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_invoice_folder_tree" model="ir.ui.view">
+        <field name="name">invoice.folder.tree</field>
+        <field name="model">invoice.folder</field>
+        <field name="arch" type="xml">
+            <tree string="Invoice Folders">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="payment_state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_invoice_folder_form" model="ir.ui.view">
+        <field name="name">invoice.folder.form</field>
+        <field name="model">invoice.folder</field>
+        <field name="arch" type="xml">
+            <form string="Invoice Folder">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="partner_id"/>
+                        <field name="invoice_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_invoice_folder_search" model="ir.ui.view">
+        <field name="name">invoice.folder.search</field>
+        <field name="model">invoice.folder</field>
+        <field name="arch" type="xml">
+            <search string="Search Invoice Folders">
+                <field name="name"/>
+                <field name="partner_id"/>
+
+                <!-- Filters -->
+                <filter string="All" name="filter_all" domain="[]"/>
+                <filter string="With Invoices" name="filter_with_invoices" domain="[('invoice_ids', '!=', False)]"/>
+                <filter string="Unpaid" name="filter_unpaid" domain="[('payment_state', '=', 'not_paid')]"/>
+                <filter string="Paid" name="filter_paid" domain="[('payment_state', '=', 'paid')]"/>
+                <filter string="Partial" name="filter_partial" domain="[('payment_state', '=', 'Partial')]"/>
+
+                <separator/>
+
+                <!-- Default date filter -->
+                <filter string="Create Date" name="filter_create_date" date="create_date"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action for Invoice Folder -->
+    <record id="action_invoice_folder" model="ir.actions.act_window">
+        <field name="name">Invoice Folders</field>
+        <field name="res_model">invoice.folder</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_invoice_folder_tree"/>
+        <field name="search_view_id" ref="view_invoice_folder_search"/>
+    </record>
+
+    <!-- Menu Item for Invoice Folder -->
+    <menuitem id="menu_invoice_folder_root"
+              name="Invoice Folders"
+              parent="sale.menu_sale_config"
+              action="action_invoice_folder"
+              sequence="12"/>
+</odoo>

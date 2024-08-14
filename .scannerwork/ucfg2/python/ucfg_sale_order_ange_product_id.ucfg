@@ -1,0 +1,71 @@
+
+4models.sale_order.SaleOrderLine._onchange_product_id{
+qE:\DESKTOPD\Anass Hajjouj\Odoo environnement\Odoo-17\addons\custom_addons\product_combo_pack\models\sale_order.pyy y("2*€
+2z z(i
+g
+z z(
+%5"__id*O
+
+__unknown_file (3*1!
+models.sale_order.SaleOrderLine"
+
+product_id*
+3
+4*3
+3
+sale_order.py"
+~ ~(
+implicit return*è
+4{ {(Fi
+g
+{' {(6
+%1"__id*O
+
+__unknown_file (3*1!
+models.sale_order.SaleOrderLine"
+
+product_idQ
+O
+{' {(F
+%2"__id*7
+
+__unknown_file (*
+
+%1"
+product_tmpl_idr
+p
+{ {(F:!
+models.sale_order.SaleOrderLine"
+product_template_id"__id*"
+
+__unknown_file (
+
+%2i
+g
+| |(-
+%3"__id*O
+
+__unknown_file (3*1!
+models.sale_order.SaleOrderLine"
+
+product_idL
+J
+| |(8
+%4"__id*2
+
+__unknown_file (*
+
+%3"
+
+list_pricei
+g
+| |(81!
+models.sale_order.SaleOrderLine"
+
+price_unit"__id*"
+
+__unknown_file (
+
+%4*
+3B#!
+models.sale_order.SaleOrderLineH

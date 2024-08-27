@@ -51,18 +51,21 @@
                                 </t>
                             </tbody>
                         </table>
+
+                        <div style="text-align: center; margin-top: 20px;">
+                            <img t-attf-src="/report/barcode/QR/{{doc.feedback_url}}?&amp;width=100&amp;height=100&amp;quiet=0"
+                                     width="100" height="100" alt="QR Code"/>
+                            <!--                            <img t-att-src="'/report/barcode/QR/' + doc.feedback_url" alt="QR Code"-->
+                            <!--                                 style="width: 150px; height: 150px;"/>-->
+                        </div>
+                        <a t-att-href="doc.feedback_url" target="_blank">
+                            Click here to provide feedback (Debugging URL)
+                        </a>
                     </div>
                 </t>
             </t>
 
         </t>
-        <!-- Add QR Code -->
-        <div style="text-align: center; margin-top: 20px;">
-            <p>
-                <strong>Scan the QR code to provide feedback:</strong>
-            </p>
-            <img t-att-src="'/report/barcode/?type=QR&amp;value=' + doc.feedback_url + '&amp;width=200&amp;height=200'"
-                 alt="QR Code"/>
-        </div>
+
     </template>
 </odoo>

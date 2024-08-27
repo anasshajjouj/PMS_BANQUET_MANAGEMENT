@@ -10,6 +10,13 @@ class EventEvent(models.Model):
     address_id = fields.Many2one('res.partner', string='Venue', help='Venue where the event is held.')
     group_ids = fields.Many2one('event.group', string='Group Associated', help='Group associated with the event.')
 
+    feedback_url = fields.Char(string='Feedback URL', compute='_compute_feedback_url', store=True)
+    # @api.depends('id')
+    def _compute_feedback_url(self):
+        base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
+        for record in self:
+            record.feedback_url = f'{base_url}/feedback?event_id={record.id}'
+
     def open_form_view(self):
         """
         Opens the sale order form view with pre-filled context based on the event details.

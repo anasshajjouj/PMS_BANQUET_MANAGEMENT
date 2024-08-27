@@ -41,7 +41,7 @@
         'views/account_move_views.xml',
         'views/invoice_folder_view.xml',
     ],
-    'images': ['static/description/banner.jpg'],
+    'images': ['static/description/banner.png'],
     'license': 'LGPL-3',
     'installable': True,
     'auto_install': False,

@@ -11,6 +11,8 @@
                 <button name="open_calendar_planning" type="object" string="Calendar Planning" class="btn-primary"/>
                 <!--                <button type="action" string="Print Activities"-->
                 <!--                        class="btn-primary"/>-->
+                <button name="open_crm_lead_form" type="object" string="Open CRM Lead" class="btn-primary"/>
+
             </xpath>
             <xpath expr="//field[@name='badge_image']" position="after">
                 <field name="group_ids"/>

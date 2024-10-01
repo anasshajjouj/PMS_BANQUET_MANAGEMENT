@@ -44,7 +44,7 @@
             </xpath>
             <xpath expr="//header/button[@id='send_by_email']" position="after">
                 <button name="open_agenda_planning" type="object" string="Accommodation" class="btn-primary">
-                    <img src="/product_combo_pack/static/description/accomondation.png"
+                    <img src="/event_management_odoo/static/description/accomondation.png"
                          style="height: 20px; width: 20px;"/>
                     Accommodation
                 </button>

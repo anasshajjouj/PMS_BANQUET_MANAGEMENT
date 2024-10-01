@@ -1,14 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <template id="report_event_program">
+    <template id="event_report_program">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
                 <t t-call="web.external_layout">
                     <div class="page">
                         <div style="width: 100%; text-align: center; margin-bottom: 20px;">
-                            <h3>Event Program:
-                                <t t-esc="doc.name"/>
-                            </h3>
+                            <h3>Event Program: <t t-esc="doc.name"/></h3>
                         </div>
                         <div style="display: flex;">
                             <p>
@@ -29,43 +26,32 @@
                                 <tr style="background-color: #01729d; color: white;">
                                     <th style="width: 40%; text-align: left; padding: 10px;">Time</th>
                                     <th style="width: 60%; text-align: left; padding: 10px;">Description</th>
-                                    <!--                                <th style="width: 40%; text-align: left; padding: 10px;">Salle</th>-->
                                 </tr>
                             </thead>
                             <tbody>
                                 <t t-foreach="doc.event_activity_ids" t-as="activity">
                                     <tr>
                                         <td style="padding: 10px; border: 1px solid #ddd;">
-                                            <t t-esc="'{:.2f}'.format(activity.time_start)"/>
-                                            -
+                                            <t t-esc="'{:.2f}'.format(activity.time_start)"/> -
                                             <t t-esc="'{:.2f}'.format(activity.time_end)"/>
                                         </td>
                                         <td style="padding: 10px; border: 1px solid #ddd;">
                                             <t t-esc="activity.description_event"/>
                                         </td>
-                                        <!--                                    <td style="padding: 10px; border: 1px solid #ddd;">-->
-                                        <!--                                        <t t-esc="activity.salle_event"/>-->
-                                        <!--                                    </td>-->
-
                                     </tr>
                                 </t>
                             </tbody>
                         </table>
-
                         <div style="text-align: center; margin-top: 20px;">
-                            <img t-attf-src="/report/barcode/QR/{{doc.feedback_url}}?&amp;width=100&amp;height=100&amp;quiet=0"
-                                     width="100" height="100" alt="QR Code"/>
-                            <!--                            <img t-att-src="'/report/barcode/QR/' + doc.feedback_url" alt="QR Code"-->
-                            <!--                                 style="width: 150px; height: 150px;"/>-->
+                            <p>Feedback URL: <t t-esc="doc.qr_code_feedback"/></p>
+                            <br/>
+                            <!-- Generate a unique QR code for each feedback URL -->
+                            <img t-att-src="'/report/barcode/QR/%s?width=100&amp;height=100' % (doc.qr_code_feedback)" width="100" height="100" alt="QR Code"/>
+<!--                            <img t-att-src="'/report/barcode/QR/%s?width=100&amp;height=100' % (doc.feedback_url)" width="100" height="100" alt="QR Code"/>-->
                         </div>
-                        <a t-att-href="doc.feedback_url" target="_blank">
-                            Click here to provide feedback (Debugging URL)
-                        </a>
                     </div>
                 </t>
             </t>
-
         </t>
-
     </template>
 </odoo>

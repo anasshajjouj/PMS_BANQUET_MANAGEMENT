@@ -1,4 +1,7 @@
-from odoo import models, fields, api
+from odoo import models, fields, api,_
+import logging
+
+_logger = logging.getLogger(__name__)
 
 class EventEvent(models.Model):
     _inherit = 'event.event'
@@ -9,13 +12,46 @@ class EventEvent(models.Model):
     event_activity_ids = fields.One2many('event.activity', 'event_id', string="Activities", help='Activities related to the event.')
     address_id = fields.Many2one('res.partner', string='Venue', help='Venue where the event is held.')
     group_ids = fields.Many2one('event.group', string='Group Associated', help='Group associated with the event.')
+    qr_code_feedback = fields.Char(string='Feedback URL', compute='_compute_qr_code_feedback', store=True)
 
-    feedback_url = fields.Char(string='Feedback URL', compute='_compute_feedback_url', store=True)
+    @api.model
+    def create(self, vals):
+        # Create the event record
+        event = super(EventEvent, self).create(vals)
+
+        # Automatically create a CRM lead associated with the event
+        self._create_crm_lead(event)
+
+        return event
+
+    # Method to create a CRM lead
+    def _create_crm_lead(self, event):
+        crm_lead = self.env['crm.lead'].create({
+            'name': f"Lead for Event: {event.name}",
+            'partner_id': event.organizer_id.id,
+            'contact_name': event.organizer_id.name,  # Fill contact_name with organizer's name
+            'type': 'opportunity',
+            'event_id': event.id,
+            'description': f"Banquet Type: {event.banquet_type.name}\nVenue: {event.address_id.name}",
+        })
+
+        return crm_lead
+
+
     # @api.depends('id')
-    def _compute_feedback_url(self):
+    def _compute_qr_code_feedback(self):
         base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
         for record in self:
-            record.feedback_url = f'{base_url}/feedback?event_id={record.id}'
+            record.qr_code_feedback = f'{base_url}/feedback?event_id={record.id}'
+    # qr_code_feedback = fields.Char(string='Feedback URL', compute='_compute_qr_code_feedback', store=True)
+    #
+    #
+    # # @api.depends('id')
+    # def _compute_qr_code_feedback(self):
+    #     base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
+    #     for record in self:
+    #         record.qr_code_feedback = f'{base_url}/feedback?event_id={record.id}'
+
 
     def open_form_view(self):
         """
@@ -35,6 +71,19 @@ class EventEvent(models.Model):
                 'default_partner_id': organizer_partner_id,
                 'default_event_id': event_id,
                 'default_banquet_type_id': banquet_type_id,
+            }
+        }
+
+    def open_crm_lead_form(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': 'crm.lead',
+            'view_mode': 'form',
+            'view_id': self.env.ref('crm.crm_lead_view_form').id,
+            'target': 'current',
+            'context': {
+                'default_contact_name': self.organizer_id.name,  # Pre-fill organizer name
+                'default_partner_id': self.organizer_id.id,  # Pre-fill partner if needed
             }
         }
 

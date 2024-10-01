@@ -8,3 +8,4 @@ from . import event_activities
 from . import event_type_activities
 from . import event_group
 from . import invoice_folder
+from . import crm_lead

@@ -55,7 +55,7 @@
                 <filter string="Rating 5 Stars" name="filter_rating_5" domain="[('rating', '=', '5')]"/>
                 <separator/>
                 <group string="Group By">
-                    <filter string="Submit Date" name="group_by_date_submitted" domain="[]" context="{'group_by':'date_submitted'}"/>
+                    <filter string="Event name" name="group_by_date_submitted" domain="[]" context="{'group_by':'event_id'}"/>
                 </group>
 
             </search>

@@ -1,4 +1,4 @@
-odoo.define('product_combo_pack.quote_configure', function (require) {
+odoo.define('event_management_odoo.quote_configure', function (require) {
     "use strict";
 
     const $ = require('jquery');

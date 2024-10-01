@@ -7,10 +7,10 @@
     sales price per product, to serve customers with products that make their 
     lives easier, and to leverage current products into new and different ones.
     They are profitable for smaller businesses as well as large ones.""",
-    'author': 'Cybrosys Techno Solutions',
-    'company': 'Cybrosys Techno Solutions',
-    'maintainer': 'Cybrosys Techno Solutions',
-    'website': 'https://www.cybrosys.com',
+    'author': 'Anass Hajjouj',
+    'company': 'Agile Organisation - Marrakech',
+    'maintainer': 'Agile Organisation - Marrakech',
+    'website': 'https://www.agileorg.com',
     'depends': ['sale_management', 'stock', 'event', 'website_sale'],
     'data': [
         'security/ir.model.access.csv',
@@ -47,3 +47,4 @@
     'auto_install': False,
     'application': False,
 }
+

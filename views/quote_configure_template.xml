@@ -51,7 +51,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
-                    <script type="text/javascript" src="/product_combo_pack/static/src/js/script.js"></script>
+                    <script type="text/javascript" src="/event_management_odoo/static/src/js/script.js"></script>
                 </div>
             </t>
         </template>

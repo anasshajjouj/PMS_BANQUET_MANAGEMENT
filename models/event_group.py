@@ -2,13 +2,12 @@ from odoo import models, fields, api
 from odoo import http
 from odoo.http import request
 class EventGroup(models.Model):
+
     _name = 'event.group'
     _description = 'Event Group'
-
     name = fields.Char(string='Group Name', required=True)
     # organizer_id = fields.Many2one('res.partner', string='Organizer')
     event_ids = fields.One2many('event.event', 'group_ids', string='Events')
-
     def action_create_quotation(self):
         # Open the sale order form view without creating a new quotation
         return {
@@ -40,7 +39,7 @@ class FeedbackController(http.Controller):
     @http.route(['/feedback'], type='http', auth="public", website=True)
     def feedback_form(self, event_id=None, **kwargs):
         events = request.env['event.event'].sudo().search([])
-        return request.render('product_combo_pack.feedback_template', {
+        return request.render('event_management_odoo.feedback_template', {
             'events': events,
             'selected_event_id': int(event_id) if event_id else None
         })
@@ -54,13 +53,13 @@ class FeedbackController(http.Controller):
                 'comments': kwargs.get('comments'),
                 'event_id': int(kwargs.get('event_id'))
             })
-        return request.render('product_combo_pack.feedback_thank_you_template')
+        return request.render('event_management_odoo.feedback_thank_you_template')
 
 # class FeedbackController(http.Controller):
 #         @http.route(['/feedback'], type='http', auth="public", website=True)
 #         def feedback_form(self, **kwargs):
 #             events = request.env['event.event'].sudo().search([])
-#             return request.render('product_combo_pack.feedback_template', {
+#             return request.render('event_management_odoo.feedback_template', {
 #                 'events': events
 #             })
 #
@@ -73,4 +72,4 @@ class FeedbackController(http.Controller):
 #                     'comments': kwargs.get('comments'),
 #                     'event_id': int(kwargs.get('event_id'))
 #                 })
-#             return request.render('product_combo_pack.feedback_thank_you_template')
+#             return request.render('event_management_odoo.feedback_thank_you_template')

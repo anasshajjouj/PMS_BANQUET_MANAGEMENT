@@ -25,7 +25,7 @@ class SaleOrder(models.Model):
     event_date_end = fields.Datetime(related='event_id.date_end', string='Event End Date', store=True)
     event_type_name = fields.Many2one(related='event_id.banquet_type', string='Event type', store=True)
     event_date_begin = fields.Datetime(related='event_id.date_begin', string='Event Start Date', store=True)
-    event_organizer_id = fields.Many2one(related='event_id.organizer_id', string="Customer")
+    event_organizer_id = fields.Many2one(related='event_id.organizer_id', string="custom-addons")
 
     def open_agenda_planning(self):
         organizer_partner_id = self.event_organizer_id.id
@@ -170,7 +170,7 @@ class WebsiteSaleOrder(http.Controller):
         partners = request.env['res.partner'].search([])
         job_categories = request.env['job.category'].search([])
         products = request.env['product.template'].search([])
-        return request.render('product_combo_pack.quote_configure_template', {
+        return request.render('event_management_odoo.quote_configure_template', {
             'partners': partners,
             'job_categories': job_categories,
             'products': products,

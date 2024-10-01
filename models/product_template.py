@@ -24,7 +24,7 @@ class ProductTemplate(models.Model):
     pack_products_ids = fields.One2many('pack.products', 'product_tmpl_id', string='Pack Products', copy=True, help='The list of products included in the pack.')
     pack_quantity = fields.Integer(string='Pack Quantity', help='The quantity of the product in the pack.')
     pack_location_id = fields.Many2one('stock.location', domain=[('usage', 'in', ['internal', 'transit'])], default=default_pack_location, string='Pack Location', help='The default location for the pack.')
-    # partner_id = fields.Many2one('res.partner', string='Customer', help='Customer for whom this product pack is created')
+    # partner_id = fields.Many2one('res.partner', string='custom-addons', help='custom-addons for whom this product pack is created')
 
     @api.onchange('is_pack')
     def _onchange_is_pack(self):
